@@ -1,0 +1,8 @@
+{
+  "name": "solKey",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "d66cad29"
+}
