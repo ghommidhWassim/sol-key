@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+:host{
+  .body-main {
+    --background: url("../../assets/imgs/oud.jpg")  50% no-repeat;
+  }
+
+}
+.note {
+  margin-right: 10px;
+}

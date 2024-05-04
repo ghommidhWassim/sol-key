@@ -1,9 +1,24 @@
-<div id="container">
-  <div *ngIf="name ==='tab1'">
-    <p>طبع</p>
+<ion-content class="body-main">
+  <div id="container">
+    <div *ngIf="name ==='tab1'">
+<!--      <ion-list>
+        <ion-item *ngFor="let tubu of tubu; let indexOf= index">
+
+          <ion-label>{{ indexOf+1 }} {{tubu.name}}</ion-label>
+        </ion-item>
+      </ion-list>-->
+
+      <ion-menu-toggle auto-hide="false" *ngFor="let tubu of tubu; let i = index">
+        <ion-item routerDirection="root"  lines="none" detail="false" (click)="openfile()">
+          <ion-icon name="musical-notes-outline" class="note"></ion-icon>
+          <ion-label>{{ tubu.name }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </div>
+
+    <div *ngIf="name ==='tab2'">
+      <p>ايقاعات</p>
+    </div>
   </div>
 
-  <div *ngIf="name ==='tab2'">
-    <p>ايقاعات</p>
-  </div>
-</div>
+</ion-content>
