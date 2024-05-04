@@ -1,5 +1,5 @@
 <ion-content class="body-main">
-  <div id="container">
+  <div id="container" *ngIf="!pdfview">
     <div *ngIf="name ==='tab1'">
 <!--      <ion-list>
         <ion-item *ngFor="let tubu of tubu; let indexOf= index">
@@ -20,5 +20,9 @@
       <p>ايقاعات</p>
     </div>
   </div>
-
+  <pdf-viewer *ngIf="pdfview" [src]="pdfSrc"
+              [render-text]="true"
+              [original-size]="false"
+              style=" height: 99vh; width: 99vw"
+  ></pdf-viewer>
 </ion-content>

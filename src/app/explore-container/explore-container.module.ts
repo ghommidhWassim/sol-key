@@ -6,12 +6,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExploreContainerComponent } from './explore-container.component';
 import {HttpClientModule} from "@angular/common/http";
+import {PdfViewerModule} from "ng2-pdf-viewer";
 
 
 
 @NgModule({
   declarations: [ExploreContainerComponent],
-  exports: [ExploreContainerComponent],
-  imports: [CommonModule, FormsModule, IonicModule, HttpClientModule,],
+  exports: [ExploreContainerComponent,],
+  imports: [CommonModule, FormsModule, IonicModule, HttpClientModule,PdfViewerModule],
 })
 export class ExploreContainerComponentModule {}

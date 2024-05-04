@@ -9,7 +9,8 @@ import { FileOpener } from '@capawesome-team/capacitor-file-opener';
   styleUrls: ['./explore-container.component.scss'],
 })
 export class ExploreContainerComponent implements OnInit{
-
+  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  pdfview: boolean= false
   @Input() name?: string;
   items:any = [];
   tubu= tubu
@@ -29,12 +30,20 @@ export class ExploreContainerComponent implements OnInit{
   }
 
   openfile(){
+    this.pdfview= true
+    /*try {
+      const open = async () => {
+        try {
+          await FileOpener.openFile({
+            path: '../../assets/files/testPdf.pdf',
+          });
+        }
+        catch(e){
+          console.log(e)
+        }
+      };
 
-    const open = async () => {
-      await FileOpener.openFile({
-        path: '../../assets/files/testPdf.pdf',
-      });
-    };
-
+    }catch (e){
+      console.log(e)}*/
   }
 }
