@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {tubu} from "../configs/params";
-import {HttpClient} from "@angular/common/http";
-import { FileOpener } from '@capawesome-team/capacitor-file-opener';
+
+import { Platform } from '@ionic/angular';
+
+import {Howl, Howler} from 'howler';
 
 @Component({
   selector: 'app-explore-container',
@@ -14,10 +16,11 @@ export class ExploreContainerComponent implements OnInit{
   @Input() name?: string;
   items:any = [];
   tubu= tubu
-
-  constructor(private httpc: HttpClient, ) {
+  sound: Howl | undefined
+  constructor(private platform: Platform) {
   }
   ngOnInit() {
+    console.log(this.platform)
     this.generateItems();
     console.log('tubu', tubu)
   }
@@ -28,6 +31,18 @@ export class ExploreContainerComponent implements OnInit{
       this.items.push(`Item ${count + i}`);
     }
   }
+
+  async play() {
+    this.sound = new Howl({
+      src: ['assets/files/audio1.mp3'],
+      html5: true
+    });
+
+    this.sound.play();
+
+
+  }
+
 
   openfile(){
     this.pdfview= true

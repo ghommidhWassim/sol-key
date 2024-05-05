@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from './explore-container.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PdfViewerModule} from "ng2-pdf-viewer";
+import {NativeAudio} from "@ionic-native/native-audio/ngx";
 
 
 
@@ -14,5 +15,6 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
   declarations: [ExploreContainerComponent],
   exports: [ExploreContainerComponent,],
   imports: [CommonModule, FormsModule, IonicModule, HttpClientModule,PdfViewerModule],
+  providers: [NativeAudio]
 })
 export class ExploreContainerComponentModule {}

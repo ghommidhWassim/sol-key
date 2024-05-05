@@ -9,10 +9,20 @@
       </ion-list>-->
 
       <ion-menu-toggle auto-hide="false" *ngFor="let tubu of tubu; let i = index">
-        <ion-item routerDirection="root"  lines="none" detail="false" (click)="openfile()">
-          <ion-icon name="musical-notes-outline" class="note"></ion-icon>
-          <ion-label>{{ tubu.name }}</ion-label>
-        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item routerDirection="root"  lines="none" detail="false" (click)="openfile()">
+                <ion-icon name="musical-notes-outline" class="note"></ion-icon>
+                <ion-label>{{ tubu.name }}</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="play()">audio</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
       </ion-menu-toggle>
     </div>
 
