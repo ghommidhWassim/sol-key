@@ -3,15 +3,41 @@
     <ion-title>
       الطبوع
     </ion-title>
+
+    <ion-buttons slot="start" (click)="navigteToMain()">
+      <ion-icon name="arrow-back-outline"></ion-icon>    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="body-main">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">الطبوع</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div *ngIf="!pdfSrc">
+    <ion-menu-toggle auto-hide="false" *ngFor="let tubu of tubu; let i = index">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item routerDirection="root"  lines="none" detail="false" (click)="openfile(tubu.file)">
+              <ion-icon name="musical-notes-outline" class="note"></ion-icon>
+              <ion-label>{{ tubu.name }}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
+    </ion-menu-toggle>
+
+  </div>
+
+  <pdf-viewer *ngIf="pdfSrc" [src]="pdfSrc"
+              [render-text]="true"
+              [original-size]="false"
+              style=" height: 99vh; width: 99vw"
+  ></pdf-viewer>
+<!--
   <app-explore-container name="tab1"></app-explore-container>
+-->
 </ion-content>

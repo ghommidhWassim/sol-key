@@ -37,28 +37,12 @@ export class ExploreContainerComponent implements OnInit{
       src: ['assets/files/audio1.mp3'],
       html5: true
     });
-
     this.sound.play();
-
-
   }
 
 
   openfile(){
     this.pdfview= true
-    /*try {
-      const open = async () => {
-        try {
-          await FileOpener.openFile({
-            path: '../../assets/files/testPdf.pdf',
-          });
-        }
-        catch(e){
-          console.log(e)
-        }
-      };
 
-    }catch (e){
-      console.log(e)}*/
   }
 }
